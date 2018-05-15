@@ -1,0 +1,36 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mailgun_key": "ENTER YOUR KEY HERE",
+  "mailgun_domain": "ENTER YOUR DOMAIN HERE",
+  "authentication": {
+    "secret": "9bcda3d8814901b8e6bf79f6c3e2ab9483674ee2a1f495a7214926efb272283cf0edb98714af86586a5c8d1fad18cf759b00246c7237472495025b8e89e358077d45f8302b49a0586aa0aa4e2dfab97330ec9a7f4785dc9f03514aa93d0853978e394e65823848e41cdbe665f1086e990a579961bda00bb5ed927f5182980733cf7d2bd1cfa343c4be932cb6909860a30c472919c0f1257fa090b7c011f7aa02795c6ed7dd12bb192bce5cbdf079c5c65a1bb147343f10aa2f3bd6b698b93963195db495a31e5c3f5a6a18a0b87b8207b2f04b10da8d781dca5fb78517819c01fcc066ff0580de775491a923a10e8b1a46bf0a2b6669cc9d8a13ae7d4bcca419",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "nedb": "../data"
+}
